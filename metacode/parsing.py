@@ -5,7 +5,6 @@ from typing import Generator, List, Optional, Union
 
 from libcst import SimpleStatementLine
 from libcst import parse_module as cst_parse
-from libcst._exceptions import ParserSyntaxError as CSTSyntaxError
 
 from metacode.errors import UnknownArgumentTypeError
 
