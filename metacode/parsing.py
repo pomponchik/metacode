@@ -3,6 +3,11 @@ from ast import parse as ast_parse
 from dataclasses import dataclass
 from typing import Generator, List, Optional, Union
 
+try:
+    from types import EllipsisType  # type: ignore[attr-defined, unused-ignore]
+except ImportError:  # pragma: no cover
+    EllipsisType = type(...)  # type: ignore[misc]
+
 from libcst import SimpleStatementLine
 from libcst import parse_module as cst_parse
 
@@ -13,7 +18,7 @@ from metacode.errors import UnknownArgumentTypeError
 class ParsedComment:
     key: str
     command: str
-    arguments: List[Optional[Union[str, int, float, bool, AST]]]
+    arguments: List[Optional[Union[str, int, float, complex, bool, EllipsisType, AST]]]
 
 
 def get_right_part(comment: str) -> str:
@@ -51,7 +56,7 @@ def get_candidates(comment: str) -> Generator[ParsedComment, None, None]:
             assign = parsed_ast.body[0]
             key = assign.target.id  # type: ignore[union-attr]
 
-            arguments = []
+            arguments: List[Optional[Union[str, int, float, complex, bool, EllipsisType, AST]]] = []
             if isinstance(assign.annotation, Name):
                 command = assign.annotation.id
 
@@ -91,7 +96,7 @@ def parse(comment: str, key: str, allow_ast: bool = False, ignore_case: bool = F
     if not key.isidentifier():
         raise ValueError('The key must be valid Python identifier.')
 
-    result = []
+    result: List[ParsedComment] = []
 
     comment = comment.lstrip()
 
