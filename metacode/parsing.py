@@ -57,11 +57,11 @@ def get_candidates(comment: str) -> Generator[ParsedComment, None, None]:
                 command = assign.annotation.value.id
 
                 if isinstance(assign.annotation.slice, Tuple):
-                    slice = assign.annotation.slice.elts
+                    slice_content = assign.annotation.slice.elts
                 else:
-                    slice = [assign.annotation.slice]
+                    slice_content = [assign.annotation.slice]
 
-                for argument in slice:
+                for argument in slice_content:
                     if isinstance(argument, Name):
                         arguments.append(argument.id)
                     elif isinstance(argument, Constant):
