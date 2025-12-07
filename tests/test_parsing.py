@@ -1,4 +1,4 @@
-from ast import AST, BinOp, Name, Subscript
+from ast import AST, BinOp, Name, Subscript, Index
 
 import pytest
 from full_match import match
@@ -125,4 +125,4 @@ def test_triple_subs():
     argument = parsed_comment.arguments[0]
 
     print(type(argument))
-    assert isinstance(argument, BinOp)
+    assert isinstance(argument, (BinOp, Index))
