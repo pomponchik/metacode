@@ -84,7 +84,10 @@ def test_parse_ast_subscription_argument_when_its_allowed():
     ast_argument = parsed_comment.arguments[0]
 
     assert isinstance(ast_argument, AST)
-    assert isinstance(ast_argument, Subscript)
+    # TODO: delete this shit about Index if minimum supported version of Python is > 3.8 (we have the Index node only in old Pythons).
+    assert isinstance(ast_argument, (Subscript, Index))
+    if isinstance(ast_argument, Index):
+        ast_argument = ast_argument.value
     assert ast_argument.value.id == 'jej'
     assert isinstance(ast_argument.slice, Name)
     assert ast_argument.slice.id == 'ok'
@@ -111,7 +114,6 @@ def test_empty_subcomment():
 
 
 def test_sub_expressions_in_arguments():
-    # Index(value=BinOp(left=Name(id='a', ctx=Load()), op=Sub(), right=Name(id='b', ctx=Load())))
     assert parse('lol: kek[a-b]', 'lol') == [ParsedComment(key='lol', command='kek', arguments=['a-b'])]
 
 
