@@ -108,3 +108,20 @@ def test_empty_subcomment():
     assert parse('#####################', 'lol') == []
     assert parse('# ###### ##### # ## #### ##', 'lol') == []
     assert parse('                                      # ###### ##### # ## #### ##', 'lol') == []
+
+
+def test_sub_expressions_in_arguments():
+    assert parse('lol: kek[a-b]', 'lol') == [ParsedComment(key='lol', command='kek', arguments=['a-b'])]
+
+
+def test_triple_subs():
+    with pytest.raises(UnknownArgumentTypeError, match=match('An argument of unknown type was found in the comment \'lol: kek[a-b-c]\'. If you want to process arbitrary code variants, not just constants, pass allow_ast=True.')):
+        parse('lol: kek[a-b-c]', 'lol')
+
+    parsed_comment = parse('lol: kek[a-b-c]', 'lol', allow_ast=True)[0]
+
+    assert len(parsed_comment.arguments) == 1
+
+    argument = parsed_comment.arguments[0]
+
+    assert isinstance(argument, BinOp)
