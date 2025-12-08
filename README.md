@@ -27,8 +27,14 @@ Many source code analysis tools use comments in a special format to mark it up. 
 
 In the Python ecosystem, there are many tools dealing with source code: linters, test coverage collection systems, and many others. Many of them use special comments, and as a rule, the style of these comments is very similar. Here are some examples:
 
-- Ruff [uses](https://docs.astral.sh/ruff/linter/#error-suppression) comments like `# noqa`, `# noqa: E741, F841`, and `# ruff: noqa: F841`.
-- 
+- [`Ruff`](https://docs.astral.sh/ruff/linter/#error-suppression): `# noqa`, `# noqa: E741, F841`, and `# ruff: noqa: F841`.
+- [`Black`](https://black.readthedocs.io/en/stable/usage_and_configuration/the_basics.html#ignoring-sections) and [`Ruff`](https://docs.astral.sh/ruff/formatter/#format-suppression): `# fmt: on` and `# fmt: off`.
+- [`Mypy`](https://discuss.python.org/t/ignore-mypy-specific-type-errors/58535): `# type: ignore` and `type: ignore[error-code]`.
+
+
+Black will not reformat lines that contain # fmt: skip or blocks that start with # fmt: off and end with # fmt: on. # fmt: skip can be mixed with other pragmas/comments either with multiple comments (e.g. # fmt: skip # pylint # noqa) or as a semicolon separated list (e.g. # fmt: skip; pylint; noqa). # fmt: on/off must be on the same level of indentation and in the same block, meaning no unindents beyond the initial indentation level between them. Black also recognizes YAPF’s block comments to the same effect, as a courtesy for straddling code.
+
+https://black.readthedocs.io/en/stable/usage_and_configuration/the_basics.html#ignoring-sections
 
 
 
