@@ -59,7 +59,7 @@ Consider a comment designed to ignore a specific mypy rule:
 
 ```
 # type: ignore[error-code]
-└-key-┘└action|arguments-┘
+└-key-┘└action⊥arguments-┘
 ```
 
 
