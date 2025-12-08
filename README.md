@@ -137,7 +137,7 @@ command: str
 arguments: List[Optional[Union[str, int, float, complex, bool, EllipsisType, AST]]]
 ```
 
-> ↑ Please note that you are transmitting a key, which means that the result is immediately returned filtered by this key. This way you can read only those comments that relate to your tool, ignoring the rest.
+> ↑ Please note that you are transmitting a key, which means that the result is returned filtered by this key. This way you can read only those comments that relate to your tool, ignoring the rest.
 
 By default, an argument in a comment must be of one of the strictly allowed types. However, you can enable reading of arbitrary other types, in which case they will be transmitted in the [`AST` node](https://docs.python.org/3/library/ast.html#ast.AST) format. To do this, pass `allow_ast=True`:
 
