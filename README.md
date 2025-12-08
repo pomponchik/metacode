@@ -133,5 +133,9 @@ By default, an argument in a comment must be of one of the strictly allowed type
 
 ```python
 print(parse('key: action[a + b]', 'key', allow_ast=True))
-#> 
+#> [ParsedComment(key='key', command='action', arguments=[<ast.BinOp object at 0x102e44eb0>])]
 ```
+
+> ↑ If you do not pass `allow_ast=True`, a `metacode.errors.UnknownArgumentTypeError` exception will be raised.
+
+> ⚠️ Be careful when writing code that analyzes the AST. Different versions of the Python interpreter can generate different AST based on the same code, so don't forget to test your code well. Otherwise, it is better to use standard metacode argument types.
