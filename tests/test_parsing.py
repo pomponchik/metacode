@@ -115,6 +115,7 @@ def test_empty_subcomment():
     assert parse('#####################', 'lol') == []
     assert parse('# ###### ##### # ## #### ##', 'lol') == []
     assert parse('                                      # ###### ##### # ## #### ##', 'lol') == []
+    assert parse('                                      # ###### ##### # ## #### ##lol: kek[a, b, c]', 'lol') == [ParsedComment(key='lol', command='kek', arguments=['a', 'b', 'c'])]
 
 
 def test_sub_expressions_in_arguments():
