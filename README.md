@@ -101,3 +101,15 @@ You can also quickly try out this and other packages without having to install u
 
 
 ## Usage
+
+The parser offered by this library is just one function that is imported like this:
+
+```python
+from metacode import parse
+```
+
+To use it, you need to extract the text of the comment in some third-party way (preferably, but not necessarily, without the # symbol at the beginning) and pass it, and the expected key must also be passed as the second argument. As a result, you will receive a list of the contents of all the comments that were parsed:
+
+```python
+parse('type: ignore[error-code]')
+```
