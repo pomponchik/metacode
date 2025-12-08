@@ -51,9 +51,9 @@ So, this library offers a language for action comments. Its syntax is a subset o
 
 From the point of view of the language, any meaningful comment can consist of 3 elements:
 
-- **Key**. This is usually the name of the specific tool for which this comment is intended, but in some cases it may be something else.
-- **Action**. The short name of the action that you want to link to this line.
-- **List of arguments**. These are often some kind of identifiers of specific linting rules or other arguments associated with this action.
+- **Key**. This is usually the name of the specific tool for which this comment is intended, but in some cases it may be something else. This can be any string allowed as an identifier in Python.
+- **Action**. The short name of the action that you want to link to this line. Also, only the allowed Python identifier.
+- **List of arguments**. These are often some kind of identifiers of specific linting rules or other arguments associated with this action. The list of possible data types described below.
 
 Consider a comment designed to ignore a specific mypy rule:
 
