@@ -30,7 +30,7 @@ classifiers = [
     'Intended Audience :: Developers',
     'Topic :: Software Development :: Libraries',
 ]
-keywords = ['CST', 'visitor']
+keywords = ['CST', 'comments', 'type comments', 'lints']
 
 [tool.setuptools.package-data]
 "metacode" = ["py.typed"]
