@@ -25,7 +25,11 @@ Many source code analysis tools use comments in a special format to mark it up. 
 
 ## Why?
 
+In the Python ecosystem, there are many tools dealing with source code: linters, test coverage collection systems, and many others. Many of them use special comments, and as a rule, the style of these comments is very similar. Here are some examples:
 
+- 
+
+https://docs.astral.sh/ruff/linter/#error-suppression
 
 
 
