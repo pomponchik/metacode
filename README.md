@@ -73,6 +73,17 @@ Simplified writing is also possible, without a list of arguments:
 
 > ↑ In this case, the parser assumes that there is an argument list, but it is empty.
 
+The number of arguments in the list is unlimited, they can be separated by commas. Here are the valid data types for arguments:
+
+- Valid Python identifiers. They are interpreted as strings.
+- Two valid Python identifiers, separated by the `-` symbol, like this: `error-code`. There can also be any number of spaces between them, they will be ignored. Interpreted as a single string.
+- String literals.
+- Numeric literals (`int`, `float`, `complex`).
+- Boolean literals (`True` and `False`).
+- `None`.
+- `...` (ellipsis).
+
+The syntax of all these data types is completely similar to the Python original (except that you can't use multi-line writing options).
 
 
 
