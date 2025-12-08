@@ -90,7 +90,7 @@ The number of arguments in the list is unlimited, they can be separated by comma
 - `...` ([ellipsis](https://docs.python.org/dev/library/constants.html#Ellipsis)).
 - Any other Python-compatible code. This is disabled by default, but you can force the mode of reading such code and get descriptions for any inserts of such code in the form of [`AST` objects](https://docs.python.org/3/library/ast.html#ast.AST), after which you can somehow process it yourself.
 
-The syntax of all these data types is completely similar to the Python original (except that you can't use multi-line writing options). Over time, it is possible to extend the possible syntax of metacode, but this template will always be supported.
+The syntax of all these data types is completely similar to the Python original (except that you can't use multi-line writing options). Over time, it is possible to extend the possible syntax of `metacode`, but this template will always be supported.
 
 There can be several comments in the `metacode` format. In this case, they should be interspersed with the `#` symbol, as if each subsequent comment is a comment on the previous one. You can also add regular text comments, they will just be ignored by the parser if they are not in `metacode` format:
 
