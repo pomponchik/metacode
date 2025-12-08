@@ -84,7 +84,7 @@ The number of arguments in the list is unlimited, they can be separated by comma
 - `...` (ellipsis).
 - Any other Python-compatible code. This is disabled by default, but you can force the mode of reading such code and get descriptions for any inserts of such code in the form of `AST` objects, after which you can somehow process it yourself.
 
-The syntax of all these data types is completely similar to the Python original (except that you can't use multi-line writing options).
+The syntax of all these data types is completely similar to the Python original (except that you can't use multi-line writing options). Over time, it is possible to extend the possible syntax of metacode, but this template will always be supported.
 
 If you scroll through this text [above](#why) to the examples of action comments from various tools, you may notice that the syntax of most of them (but not all) is it can be described using `metacode`, and if not, it can be easily adapted to `metacode`. Read on to learn how to use a ready-made parser in practice.
 
