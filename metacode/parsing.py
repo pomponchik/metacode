@@ -63,8 +63,9 @@ def get_candidates(comment: str) -> Generator[ParsedComment, None, None]:
             else:
 
                 command = assign.annotation.value.id  # type: ignore[attr-defined]
+
                 from ast import dump
-                print('command', dump(command))
+                print('command', dump(assign))
                 if isinstance(assign.annotation.slice, Tuple):  # type: ignore[attr-defined]
                     slice_content = assign.annotation.slice.elts  # type: ignore[attr-defined]
                 else:
