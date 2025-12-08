@@ -123,7 +123,7 @@ print(parse('type: ignore[error-code] # type: not_ignore[another-error]', 'type'
 #> [ParsedComment(key='type', command='ignore', arguments=['error-code']), ParsedComment(key='type', command='not_ignore', arguments=['another-error'])]
 ```
 
-By default, an argument in a comment must be of one of the strictly allowed types. However, you can enable reading of arbitrary other types, in which case they will be transmitted in the AST node format. To do this, pass `allow_ast=True`:
+By default, an argument in a comment must be of one of the strictly allowed types. However, you can enable reading of arbitrary other types, in which case they will be transmitted in the `AST` node format. To do this, pass `allow_ast=True`:
 
 ```python
 print(parse('key: action[a + b]', 'key', allow_ast=True))
