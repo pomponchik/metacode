@@ -12,6 +12,9 @@
 [![Ruff](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/astral-sh/ruff/main/assets/badge/v2.json)](https://github.com/astral-sh/ruff)
 [![DeepWiki](https://deepwiki.com/badge.svg)](https://deepwiki.com/pomponchik/metacode)
 
+Many source code analysis tools use comments in a special format to mark it up. This is an important part of the Python ecosystem, but there is still no single standard around it. This library offers such a standard.
+
+
 ## Table of contents
 
 - [**Why?**](#why)
@@ -22,8 +25,22 @@
 
 ## Why?
 
+
+
+
+
 ## The language
 
 ## Installation
+
+
+Install it:
+
+```bash
+pip install metacode
+```
+
+You can also quickly try out this and other packages without having to install using [instld](https://github.com/pomponchik/instld).
+
 
 ## Usage
