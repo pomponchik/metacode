@@ -45,23 +45,11 @@ As a result, as a user, you need to remember the rules by which comments are wri
 This is exactly the problem that this library solves. It describes a simple and intuitive standard for action comments, and also offers a ready-made parser that creators of other tools can use. The standard offered by this library is based entirely on a subset of the Python syntax and can be easily reimplemented even if you do not want to use this library directly.
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 ## The language
+
+So, this library offers a language for action comments. Its syntax is a subset of Python syntax, but without Python semantics, as full-fledged execution does not occur.
+
+The purpose of the language is simply to provide the developer with the content of the comment in a convenient way, if it is written in a compatible format. If the comment format is not compatible with the parser, it is simply ignored.
 
 ## Installation
 
