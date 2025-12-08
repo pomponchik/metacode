@@ -1,4 +1,5 @@
-![logo](https://raw.githubusercontent.com/pomponchik/metacode/develop/docs/assets/logo_3.svg)
+<details>
+  <summary>ⓘ</summary>
 
 [![Downloads](https://static.pepy.tech/badge/metacode/month)](https://pepy.tech/project/metacode)
 [![Downloads](https://static.pepy.tech/badge/metacode)](https://pepy.tech/project/metacode)
@@ -11,6 +12,11 @@
 [![Checked with mypy](http://www.mypy-lang.org/static/mypy_badge.svg)](http://mypy-lang.org/)
 [![Ruff](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/astral-sh/ruff/main/assets/badge/v2.json)](https://github.com/astral-sh/ruff)
 [![DeepWiki](https://deepwiki.com/badge.svg)](https://deepwiki.com/pomponchik/metacode)
+
+</details>
+
+
+![logo](https://raw.githubusercontent.com/pomponchik/metacode/develop/docs/assets/logo_3.svg)
 
 Many source code analysis tools use comments in a special format to mark it up. This is an important part of the Python ecosystem, but there is still no single standard around it. This library offers such a standard.
 
