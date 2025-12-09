@@ -154,3 +154,10 @@ You can allow your users to write keys in any case. To do this, pass `ignore_cas
 print(parse('KEY: action', 'key', ignore_case=True))
 #> [ParsedComment(key='KEY', command='action', arguments=[])]
 ```
+
+You can also easily add support for several different keys. To do this, pass a list of keys instead of one key:
+
+```python
+print(parse('key: action # other_key: other_action', ['key', 'other_key']))
+#> [ParsedComment(key='key', command='action', arguments=[]), ParsedComment(key='other_key', command='other_action', arguments=[])]
+```
