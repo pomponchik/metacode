@@ -41,7 +41,7 @@ In the Python ecosystem, there are many tools dealing with source code: linters,
 - [`Isort`](https://pycqa.github.io/isort/docs/configuration/action_comments.html) —> `# isort: skip`, `# isort: off`.
 - [`Bandit`](https://bandit.readthedocs.io/en/latest/config.html#suppressing-individual-lines) —> `# nosec`.
 
-But you know what? *There is no single standard for such comments*. Seriously.
+But you know what? *There is no single standard for such comments*.
 
 The internal implementation of reading such comments is also different. Someone uses regular expressions, someone uses even more primitive string processing tools, and someone uses full-fledged parsers, including the Python parser or even written from scratch.
 
