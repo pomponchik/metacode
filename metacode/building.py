@@ -1,7 +1,7 @@
 from ast import AST
 
 from metacode.comment import ParsedComment
-from metacode.typing import EllipsisType
+from metacode.typing import EllipsisType  # type: ignore[attr-defined]
 
 
 def build(comment: ParsedComment) -> str:
