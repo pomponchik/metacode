@@ -11,7 +11,6 @@ from metacode.typing import Arguments
 from metacode.comment import ParsedComment
 
 
-
 def get_right_part(comment: str) -> str:
     return '#'.join(comment.split('#')[1:])
 
