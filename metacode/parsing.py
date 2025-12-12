@@ -1,6 +1,5 @@
 from ast import AST, AnnAssign, BinOp, Constant, Index, Name, Sub, Subscript, Tuple
 from ast import parse as ast_parse
-from dataclasses import dataclass
 from typing import Generator, List, Optional, Union
 
 from libcst import SimpleStatementLine

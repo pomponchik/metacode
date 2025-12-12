@@ -163,6 +163,27 @@ print(parse('key: action # other_key: other_action', ['key', 'other_key']))
 #> [ParsedComment(key='key', command='action', arguments=[]), ParsedComment(key='other_key', command='other_action', arguments=[])]
 ```
 
+Well, now we can read the comments. But what if we want to record? There is another function for this: `insert()`:
+
+```python
+from metacode import insert, ParsedComment
+```
+
+You send the comment you want to insert there, as well as the current comment (empty if there is no comment, or starting with # if there is), and you get a ready-made new comment text:
+
+```python
+print(insert(ParsedComment(key='key', command='command', arguments=['lol', 'lol-kek']), ''))
+# key: command[lol, 'lol-kek']
+print(insert(ParsedComment(key='key', command='command', arguments=['lol', 'lol-kek']), '# some existing text'))
+# key: command[lol, 'lol-kek'] # some existing text
+```
+
+As you can see, our comment is inserted before the existing comment. However, you can do the opposite:
+
+```python
+print(insert(ParsedComment(key='key', command='command', arguments=['lol', 'lol-kek']), '# some existing text', at_end=True))
+# some existing text # key: command[lol, 'lol-kek']
+```
 
 ## What about other languages?
 
