@@ -5,9 +5,9 @@ from typing import Generator, List, Optional, Union
 from libcst import SimpleStatementLine
 from libcst import parse_module as cst_parse
 
+from metacode.comment import ParsedComment
 from metacode.errors import UnknownArgumentTypeError
 from metacode.typing import Arguments
-from metacode.comment import ParsedComment
 
 
 def get_right_part(comment: str) -> str:

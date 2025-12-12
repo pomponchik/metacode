@@ -1,5 +1,5 @@
 from ast import AST
-from typing import Union, TypeAlias, List, Optional
+from typing import List, Optional, TypeAlias, Union
 
 # TODO: delete this catch block and "type: ignore" if minimum supported version of Python is > 3.9.
 try:

@@ -3,7 +3,7 @@ from ast import Name
 import pytest
 from full_match import match
 
-from metacode import build, insert, ParsedComment
+from metacode import ParsedComment, build, insert
 
 
 def test_run_build_with_wrong_key_or_action():

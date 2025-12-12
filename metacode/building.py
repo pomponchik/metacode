@@ -1,7 +1,7 @@
 from ast import AST
 
-from metacode.typing import EllipsisType
 from metacode import ParsedComment
+from metacode.typing import EllipsisType
 
 
 def build(comment: ParsedComment) -> str:
@@ -42,7 +42,6 @@ def insert(comment: ParsedComment, existing_comment: str, at_end: bool = False) 
             return existing_comment + build(comment)
         return f'{existing_comment} {build(comment)}'
 
-    else:
-        if existing_comment.startswith(' '):
-            return f'{build(comment)}{existing_comment}'
-        return f'{build(comment)} {existing_comment}'
+    if existing_comment.startswith(' '):
+        return f'{build(comment)}{existing_comment}'
+    return f'{build(comment)} {existing_comment}'
