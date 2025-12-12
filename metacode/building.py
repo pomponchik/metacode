@@ -1,6 +1,6 @@
 from ast import AST
 
-from metacode import ParsedComment
+from metacode.comment import ParsedComment
 from metacode.typing import EllipsisType
 
 
