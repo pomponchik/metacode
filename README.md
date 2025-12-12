@@ -185,6 +185,9 @@ print(insert(ParsedComment(key='key', command='command', arguments=['lol', 'lol-
 # some existing text # key: command[lol, 'lol-kek']
 ```
 
+> ⚠️ Be careful: AST nodes can be read, but cannot be written.
+
+
 ## What about other languages?
 
 If you are writing your Python-related tool not in Python, as is currently fashionable, but in some other language, such as Rust, you may want to adhere to the `metacode` standard for machine-readable comments, however, you cannot directly use the ready-made parser described [above](#usage). What to do?
